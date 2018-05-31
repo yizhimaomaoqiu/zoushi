@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.title = @"数据";
+    self.title = @"全部数据";
     
     self.dataArr = [NSMutableArray array];
     
