@@ -19,6 +19,7 @@
 		843EBA6B1FFB8040004F6DFA /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EBA691FFB8040004F6DFA /* SVProgressHUD.m */; };
 		B42115B820BBCCA900219A5F /* ToolClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B42115B720BBCCA900219A5F /* ToolClassManager.m */; };
 		B42115BB20BC128300219A5F /* Text_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42115BA20BC128300219A5F /* Text_VC.m */; };
+		B430F88920BFB03200561A06 /* 2018-05-31 11-00.txt in Resources */ = {isa = PBXBuildFile; fileRef = B430F88820BFB03200561A06 /* 2018-05-31 11-00.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B42115B720BBCCA900219A5F /* ToolClassManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolClassManager.m; sourceTree = "<group>"; };
 		B42115B920BC128300219A5F /* Text_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text_VC.h; sourceTree = "<group>"; };
 		B42115BA20BC128300219A5F /* Text_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text_VC.m; sourceTree = "<group>"; };
+		B430F88820BFB03200561A06 /* 2018-05-31 11-00.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2018-05-31 11-00.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		843EBA2F1FFB6DFA004F6DFA /* ZouShi */ = {
 			isa = PBXGroup;
 			children = (
+				B430F88720BFB01100561A06 /* Data_json */,
 				843EBA661FFB8040004F6DFA /* SVP */,
 				843EBA331FFB6DFA004F6DFA /* AppDelegate.h */,
 				843EBA341FFB6DFA004F6DFA /* AppDelegate.m */,
@@ -166,6 +169,14 @@
 				843EBA691FFB8040004F6DFA /* SVProgressHUD.m */,
 			);
 			path = SVP;
+			sourceTree = "<group>";
+		};
+		B430F88720BFB01100561A06 /* Data_json */ = {
+			isa = PBXGroup;
+			children = (
+				B430F88820BFB03200561A06 /* 2018-05-31 11-00.txt */,
+			);
+			path = Data_json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				843EBA401FFB6DFA004F6DFA /* LaunchScreen.storyboard in Resources */,
 				843EBA6A1FFB8040004F6DFA /* SVProgressHUD.bundle in Resources */,
 				843EBA3D1FFB6DFA004F6DFA /* Assets.xcassets in Resources */,
+				B430F88920BFB03200561A06 /* 2018-05-31 11-00.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
