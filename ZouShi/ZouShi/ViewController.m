@@ -207,9 +207,12 @@
     }]];
     [alC addAction:[UIAlertAction actionWithTitle:@"预测" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        NSInteger num = [[ToolClassManager shareDataBase]JiChaForecast:self.dataArr.firstObject];
-        NSString *str = [NSString stringWithFormat:@"极差预测结果: %zd", num];
-        UIAlertController *talC = [UIAlertController alertControllerWithTitle:@"预测" message:str preferredStyle:UIAlertControllerStyleAlert];
+        NSInteger jicha = [[ToolClassManager shareDataBase]JiChaForecast:self.dataArr.firstObject];
+        NSInteger pengheng = [[ToolClassManager shareDataBase]blanceForecast:self.dataArr.firstObject];
+        NSString *str1 = [NSString stringWithFormat:@"极差预测结果: %zd", jicha];
+        NSString *str2 = [NSString stringWithFormat:@"平衡预测结果: %zd", pengheng];
+        NSArray *arr = @[str1, str2];
+        UIAlertController *talC = [UIAlertController alertControllerWithTitle:@"预测" message:[arr componentsJoinedByString:@"\n"] preferredStyle:UIAlertControllerStyleAlert];
         [talC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
         }]];
