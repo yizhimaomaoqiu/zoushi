@@ -308,7 +308,7 @@
         }
     }
     NSString *json = [self arrayToJSONString:arr];
-    return json;
+    return [NSString stringWithFormat:@"{\"data\":%@}", json];
 }
 
 - (NSString *)arrayToJSONString:(NSArray *)array
