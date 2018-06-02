@@ -102,6 +102,15 @@
     return [(NSString *)arr[1] integerValue] - [(NSString *)arr[3] integerValue];
 }
     
+//取两个数组的交集
+- (NSArray *)getJiaoJiarr1:(NSArray *)arr1 arr2:(NSArray *)arr2{
+    NSMutableSet *set1 = [NSMutableSet setWithArray:arr1];
+    NSMutableSet *set2 = [NSMutableSet setWithArray:arr2];
+    [set1 intersectSet:set2];
+    NSArray *jiaoji = [set1 allObjects];
+    return jiaoji == nil ? @[] : jiaoji;
+}
+    
 - (NSInteger)getZhongWeiCha:(NSArray *)tarr{
     NSMutableArray *arr = [NSMutableArray arrayWithArray:tarr];
     for (NSInteger i = 0; i < arr.count; i ++) {
@@ -149,6 +158,7 @@
             NSInteger tjicayuce = -10000;
             BOOL pingHengMingZhong = NO;
             NSInteger tpingHengYuCe = -10000;
+            NSArray *jiaoji = nil;
             if (i - 1 >= 0){
                 NSArray *arr = self.numArr[i - 1];
                 isclude = [arr containsObject:jicha];
@@ -158,6 +168,7 @@
                 NSInteger pingHengYuCe = [self blanceForecast:Narr];
                 pingHengMingZhong = [arr containsObject:[NSString stringWithFormat:@"%zd", pingHengYuCe]];
                 tpingHengYuCe = pingHengYuCe;
+                jiaoji = [self getJiaoJiarr1:arr arr2:Narr];
             }
             [dataArr addObject:@{@"arr":Narr,
                                  @"极差":jicha,
@@ -170,7 +181,9 @@
                                  @"极差预测":jichamingzhong == YES ? @"命中" : @"没命中",
                                  @"极差预测结果":[NSString stringWithFormat:@"%zd", tjicayuce],
                                  @"平衡预测":pingHengMingZhong == YES ? @"命中" : @"没命中",
-                                 @"平衡预测结果":[NSString stringWithFormat:@"%zd", tpingHengYuCe]
+                                 @"平衡预测结果":[NSString stringWithFormat:@"%zd", tpingHengYuCe],
+                                 @"与下次的交集":jiaoji == nil ? @[] : jiaoji,
+                                 @"与下次的交集个数":[NSString stringWithFormat:@"%zd", jiaoji.count]
                                  }];
             if (jichamingzhong) {
                 jichayuchemingzhong ++;

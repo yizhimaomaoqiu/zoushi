@@ -99,10 +99,13 @@
                               [NSString stringWithFormat:@"中位差:%@\n", dic[@"中位差"]],
                               [NSString stringWithFormat:@"是否包含上次极差:%@\n", dic[@"包含极差"]],
                               [NSString stringWithFormat:@"平均值:%@\n", dic[@"平均数"]],
+                              [NSString stringWithFormat:@"与下次的交集:%@\n", [dic[@"与下次的交集"] componentsJoinedByString:@","]],
+                              [NSString stringWithFormat:@"与下次的交集个数:%@\n", dic[@"与下次的交集个数"]],
                               [NSString stringWithFormat:@"极差预测:%@\n", dic[@"极差预测"]],
                               [NSString stringWithFormat:@"极差预测结果:%@\n", dic[@"极差预测结果"]],
                               [NSString stringWithFormat:@"平衡预测:%@\n", dic[@"平衡预测"]],
-                              [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]];
+                              [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]
+                              ];
             NSMutableArray *colorArr = [NSMutableArray array];
             NSMutableArray *fontArr = [NSMutableArray array];
             NSMutableArray *rangArr = [NSMutableArray array];
@@ -117,6 +120,10 @@
                     [colorArr addObject:[UIColor greenColor]];
                 }else if (i == tarr.count - 4){
                     [colorArr addObject:[UIColor purpleColor]];
+                }else if (i == tarr.count - 5){
+                    [colorArr addObject:[UIColor redColor]];
+                }else if (i == tarr.count - 6){
+                    [colorArr addObject:[UIColor orangeColor]];
                 }else{
                     [colorArr addObject:[UIColor lightGrayColor]];
                 }
@@ -148,10 +155,13 @@
                               [NSString stringWithFormat:@"中位差:%@\n", dic[@"中位差"]],
                               [NSString stringWithFormat:@"是否包含上次极差:%@\n", dic[@"包含极差"]],
                               [NSString stringWithFormat:@"平均值:%@\n", dic[@"平均数"]],
+                              [NSString stringWithFormat:@"与下次的交集:%@\n", [dic[@"与下次的交集"] componentsJoinedByString:@","]],
+                              [NSString stringWithFormat:@"与下次的交集个数:%@\n", dic[@"与下次的交集个数"]],
                               [NSString stringWithFormat:@"极差预测:%@\n", dic[@"极差预测"]],
                               [NSString stringWithFormat:@"极差预测结果:%@\n", dic[@"极差预测结果"]],
                               [NSString stringWithFormat:@"平衡预测:%@\n", dic[@"平衡预测"]],
-                              [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]];
+                              [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]
+                              ];
             NSMutableArray *colorArr = [NSMutableArray array];
             NSMutableArray *fontArr = [NSMutableArray array];
             NSMutableArray *rangArr = [NSMutableArray array];
@@ -166,6 +176,10 @@
                     [colorArr addObject:[UIColor greenColor]];
                 }else if (i == tarr.count - 4){
                     [colorArr addObject:[UIColor purpleColor]];
+                }else if (i == tarr.count - 5){
+                    [colorArr addObject:[UIColor redColor]];
+                }else if (i == tarr.count - 6){
+                    [colorArr addObject:[UIColor orangeColor]];
                 }else{
                     [colorArr addObject:[UIColor lightGrayColor]];
                 }
@@ -196,10 +210,13 @@
                           [NSString stringWithFormat:@"中位差:%@\n", dic[@"中位差"]],
                           [NSString stringWithFormat:@"是否包含上次极差:%@\n", dic[@"包含极差"]],
                           [NSString stringWithFormat:@"平均值:%@\n", dic[@"平均数"]],
+                          [NSString stringWithFormat:@"与下次的交集:%@\n", [dic[@"与下次的交集"] componentsJoinedByString:@","]],
+                          [NSString stringWithFormat:@"与下次的交集个数:%@\n", dic[@"与下次的交集个数"]],
                           [NSString stringWithFormat:@"极差预测:%@\n", dic[@"极差预测"]],
                           [NSString stringWithFormat:@"极差预测结果:%@\n", dic[@"极差预测结果"]],
                           [NSString stringWithFormat:@"平衡预测:%@\n", dic[@"平衡预测"]],
-                          [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]];
+                          [NSString stringWithFormat:@"平衡预测结果:%@\n", dic[@"平衡预测结果"]]
+                          ];
         NSMutableArray *colorArr = [NSMutableArray array];
         NSMutableArray *fontArr = [NSMutableArray array];
         NSMutableArray *rangArr = [NSMutableArray array];
@@ -214,6 +231,10 @@
                 [colorArr addObject:[UIColor greenColor]];
             }else if (i == tarr.count - 4){
                 [colorArr addObject:[UIColor purpleColor]];
+            }else if (i == tarr.count - 5){
+                [colorArr addObject:[UIColor redColor]];
+            }else if (i == tarr.count - 6){
+                [colorArr addObject:[UIColor orangeColor]];
             }else{
                 [colorArr addObject:[UIColor lightGrayColor]];
             }
@@ -248,7 +269,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 250;
+    return 270;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
