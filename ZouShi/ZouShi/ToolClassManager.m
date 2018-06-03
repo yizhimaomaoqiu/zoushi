@@ -208,7 +208,8 @@
              @"平衡极差率":[NSString stringWithFormat:@"%.3f", (CGFloat)blanceAndJicha / (CGFloat)blance],
              @"不平衡极差率":[NSString stringWithFormat:@"%.3f", (CGFloat)noblanceAndJicha / (CGFloat)noblance],
              @"极差预测命中率":[NSString stringWithFormat:@"%.3f", (CGFloat)jichayuchemingzhong / (CGFloat)self.numArr.count],
-             @"平衡预测命中率":[NSString stringWithFormat:@"%.3f", (CGFloat)pinghengyuchemingzhong / (CGFloat)self.numArr.count]
+             @"平衡预测命中率":[NSString stringWithFormat:@"%.3f", (CGFloat)pinghengyuchemingzhong / (CGFloat)self.numArr.count],
+             @"分布字典":[self fenbuDic:self.numArr]
              };
 }
     
@@ -350,5 +351,22 @@
         return str;
     }
     
+- (NSDictionary *)fenbuDic:(NSArray *)arr{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    for (NSArray *arr in self.numArr) {
+        for (NSInteger i = 1; i < 12; i++) {
+            NSString *istr = [NSString stringWithFormat:@"%zd", i];
+            if ([arr containsObject:istr]) {
+                NSString *strnum = dic[istr];
+                if (strnum){
+                    [dic setValue:[NSString stringWithFormat:@"%zd", strnum.integerValue + 1] forKey:istr];
+                }else{
+                    [dic setObject:@"1" forKey:istr];
+                }
+            }
+        }
+    }
+    return dic;
+}
     
-    @end
+@end

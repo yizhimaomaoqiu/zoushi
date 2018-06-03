@@ -8,9 +8,11 @@
 
 #import "Text_VC.h"
 #import "ToolClassManager.h"
-@interface Text_VC ()<UITableViewDelegate, UITableViewDataSource>
+#import "SCChart.h"
+@interface Text_VC ()<UITableViewDelegate, UITableViewDataSource, SCChartDataSource>
 @property (nonatomic, strong)NSMutableArray *dataArr;
 @property (nonatomic, strong)UITableView *tableView;
+
 @end
 
 @implementation Text_VC
@@ -63,7 +65,7 @@
 }
 
 - (UIView *)tableheaderView{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     view.backgroundColor = [UIColor whiteColor];
     
     NSArray *tarr = @[[NSString stringWithFormat:@"平衡率:%@\n", self.dic[@"平衡率"]],
@@ -83,7 +85,27 @@
     [view addSubview:lab];
     lab.numberOfLines = 0;
     
+    SCChart *chartView = [[SCChart alloc] initwithSCChartDataFrame:CGRectMake(10, 200, [UIScreen mainScreen].bounds.size.width - 20, 400) withSource:self withStyle:SCChartBarStyle];
+    [chartView showInView:view];
+    
     return view;
+}
+    
+- (NSArray *)SCChart_xLableArray:(SCChart *)chart {
+    return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11"];
+}
+    
+- (NSArray *)SCChart_yValueArray:(SCChart *)chart {
+    NSDictionary *dic = self.dic[@"分布字典"];
+    NSMutableArray *arr = [NSMutableArray array];
+    if (dic.count > 0){
+        for (NSInteger i = 1; i < 12; i++) {
+            NSString *istr = [NSString stringWithFormat:@"%zd", i];
+            [arr addObject:dic[istr]];
+        }
+        return @[arr];
+    }
+    return @[];
 }
 
 - (void)meiMingZhong:(UITableView *)tableview{
