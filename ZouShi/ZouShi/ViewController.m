@@ -46,7 +46,8 @@
     _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self read];
+    self.dataArr = [self read];
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
