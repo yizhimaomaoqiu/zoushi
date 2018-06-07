@@ -194,6 +194,44 @@
         vc.dic = [[ToolClassManager shareDataBase]getFirstBlanceMessageDic];
         [self.navigationController pushViewController:vc animated:YES];
     }]];
+    [alC addAction:[UIAlertAction actionWithTitle:@"双色球红球计算" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"填写数字" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.keyboardType =  UIKeyboardTypeNumberPad;
+        }];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSMutableArray *arr= [NSMutableArray array];
+            for (UITextField *textFie in alertController.textFields) {
+                [arr addObject:textFie.text];
+            }
+            NSArray *resultArr = [[ToolClassManager shareDataBase]getHongQiu:arr];
+            UIAlertController *talC = [UIAlertController alertControllerWithTitle:@"红球预测" message:[resultArr componentsJoinedByString:@", "] preferredStyle:UIAlertControllerStyleAlert];
+            [talC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [self presentViewController:talC animated:YES completion:nil];
+        }]];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }]];
     [alC addAction:[UIAlertAction actionWithTitle:@"打印数组json, 并复制到粘贴板" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[ToolClassManager shareDataBase]setDataNum:self.dataArr];
         NSString *str = [[ToolClassManager shareDataBase] LogArr];

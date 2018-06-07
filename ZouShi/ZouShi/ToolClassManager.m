@@ -334,7 +334,7 @@
 }
 
 -(NSMutableAttributedString *)text:(NSString *)text rangeArr:(NSArray *)rangeArr fontArr:(NSArray *)fontArr colorArr:(NSArray *)colorArr
-    {
+{
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:text];
         
         for (NSInteger i = 0; i < rangeArr.count; i ++) {
@@ -349,8 +349,8 @@
             [str addAttribute:NSForegroundColorAttributeName value:color range:rang];
         }
         return str;
-    }
-    
+}
+
 - (NSDictionary *)fenbuDic:(NSArray *)arr{
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     for (NSArray *arr in self.numArr) {
@@ -367,6 +367,20 @@
         }
     }
     return dic;
+}
+
+- (NSArray *)getHongQiu:(NSArray *)arr{
+    NSInteger he = 0;
+    NSMutableArray *chashuArr = [NSMutableArray array];
+    for (NSString *str in arr) {
+        he += str.integerValue;
+    }
+    for (NSString *str in arr) {
+        NSInteger chashu = he - str.integerValue;
+        NSInteger result = (chashu - chashu % str.integerValue) / str.integerValue;
+        [chashuArr addObject:[NSString stringWithFormat:@"%zd", result]];
+    }
+    return chashuArr;
 }
     
 @end

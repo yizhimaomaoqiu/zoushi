@@ -31,6 +31,9 @@
 
 ///返回数组json数据
 - (NSString *)LogArr;
+    
+///红球算法
+- (NSArray *)getHongQiu:(NSArray *)arr;
 
 -(NSMutableAttributedString *)text:(NSString *)text rangeArr:(NSArray *)rangeArr fontArr:(NSArray *)fontArr colorArr:(NSArray *)colorArr;
     
