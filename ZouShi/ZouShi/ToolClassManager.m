@@ -144,10 +144,11 @@
     NSInteger noblanceAndJicha = 0;
     NSInteger jichayuchemingzhong = 0;
     NSInteger pinghengyuchemingzhong = 0;
+    CGFloat zongshu = 0;
     for (NSInteger i = 0; i < self.numArr.count; i ++) {
         @autoreleasepool{
-            
             NSArray *Narr = self.numArr[i];
+            zongshu += [self qiuhe:Narr];
             NSDictionary *dic = [self getBlance:Narr];
             BOOL isBlance = [dic[@"isBlance"] boolValue];
             NSString *jicha = [NSString stringWithFormat:@"%zd", [self getJicha:Narr]];
@@ -209,7 +210,8 @@
              @"不平衡极差率":[NSString stringWithFormat:@"%.3f", (CGFloat)noblanceAndJicha / (CGFloat)noblance],
              @"极差预测命中率":[NSString stringWithFormat:@"%.3f", (CGFloat)jichayuchemingzhong / (CGFloat)self.numArr.count],
              @"平衡预测命中率":[NSString stringWithFormat:@"%.3f", (CGFloat)pinghengyuchemingzhong / (CGFloat)self.numArr.count],
-             @"分布字典":[self fenbuDic:self.numArr]
+             @"分布字典":[self fenbuDic:self.numArr],
+             @"平均数":[NSString stringWithFormat:@"%.2f", zongshu / (CGFloat)self.numArr.count / 6.0]
              };
 }
     
@@ -381,6 +383,14 @@
         [chashuArr addObject:[NSString stringWithFormat:@"%zd", result]];
     }
     return chashuArr;
+}
+
+- (CGFloat)qiuhe:(NSArray *)arr{
+    CGFloat flo = 0;
+    for (NSString *str in arr) {
+        flo += str.integerValue;
+    }
+    return flo;
 }
     
 @end

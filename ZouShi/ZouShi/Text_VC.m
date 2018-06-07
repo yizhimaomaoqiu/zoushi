@@ -73,7 +73,8 @@
                       [NSString stringWithFormat:@"平衡极差率:%@\n", self.dic[@"平衡极差率"]],
                       [NSString stringWithFormat:@"不平衡极差率:%@\n", self.dic[@"不平衡极差率"]],
                       [NSString stringWithFormat:@"极差预测命中率:%@\n", self.dic[@"极差预测命中率"]],
-                      [NSString stringWithFormat:@"平衡预测命中率:%@\n", self.dic[@"平衡预测命中率"]]
+                      [NSString stringWithFormat:@"平衡预测命中率:%@\n", self.dic[@"平衡预测命中率"]],
+                      [NSString stringWithFormat:@"平均数:%@\n", self.dic[@"平均数"]]
                       ];
     
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(30, 20, view.frame.size.width - 60, 160)];
