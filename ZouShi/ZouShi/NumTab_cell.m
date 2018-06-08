@@ -28,10 +28,9 @@
 
 - (void)creatUI{
     _labArr = [NSMutableArray array];
-    CGFloat w = [UIScreen mainScreen].bounds.size.width / 33 * 2;
-    CGFloat x = ([UIScreen mainScreen].bounds.size.width - w * 11) / 2;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width / 11;
     for (NSInteger i = 0; i < 11; i ++) {
-        UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(x + i * w, 0, w, 50)];
+        UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(i * w, 0, w, 50)];
         lab.backgroundColor = [UIColor clearColor];
         lab.textColor = [UIColor blackColor];
         lab.textAlignment = NSTextAlignmentCenter;
