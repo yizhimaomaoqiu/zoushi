@@ -9,6 +9,7 @@
 #import "Text_VC.h"
 #import "ToolClassManager.h"
 #import "SCChart.h"
+#import "JiaojiArr_VC.h"
 @interface Text_VC ()<UITableViewDelegate, UITableViewDataSource, SCChartDataSource>
 @property (nonatomic, strong)NSMutableArray *dataArr;
 @property (nonatomic, strong)UITableView *tableView;
@@ -16,6 +17,26 @@
 @end
 
 @implementation Text_VC
+
+- (void)getcongfuarr{
+    NSArray *messageArr = self.dic[@"messageArr"];
+    NSMutableArray *dataArr = [NSMutableArray array];
+    for (NSDictionary *dic in messageArr) {
+        NSArray *congfu = dic[@"与下次的交集"];
+        NSMutableArray *darr = [NSMutableArray array];
+        for (NSInteger i = 1; i <= 11; i ++) {
+            if ([congfu containsObject:[NSString stringWithFormat:@"%zd", i]]) {
+                [darr addObject:[NSString stringWithFormat:@"%zd", i]];
+            }else{
+                [darr addObject:@""];
+            }
+        }
+        [dataArr addObject:darr];
+    }
+    JiaojiArr_VC *vc = [[JiaojiArr_VC alloc]init];
+    vc.dataArr = dataArr;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)action{
     
@@ -28,6 +49,9 @@
     }]];
     [alC addAction:[UIAlertAction actionWithTitle:@"全部" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self jisuan:self.tableView];
+    }]];
+    [alC addAction:[UIAlertAction actionWithTitle:@"重复数组列表" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self getcongfuarr];
     }]];
     [alC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
-@interface JiaojiArr_VC : ViewController
+@interface JiaojiArr_VC : UIViewController
+
+@property (nonatomic, strong)NSMutableArray *dataArr;
 
 @end

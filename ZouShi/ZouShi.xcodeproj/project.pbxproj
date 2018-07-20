@@ -17,6 +17,7 @@
 		843EBA651FFB6F36004F6DFA /* NumTab_cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EBA641FFB6F36004F6DFA /* NumTab_cell.m */; };
 		843EBA6A1FFB8040004F6DFA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 843EBA671FFB8040004F6DFA /* SVProgressHUD.bundle */; };
 		843EBA6B1FFB8040004F6DFA /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EBA691FFB8040004F6DFA /* SVProgressHUD.m */; };
+		B40396DF21016B09004D41DA /* JiaojiArr_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = B40396DE21016B09004D41DA /* JiaojiArr_VC.m */; };
 		B42115B820BBCCA900219A5F /* ToolClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B42115B720BBCCA900219A5F /* ToolClassManager.m */; };
 		B42115BB20BC128300219A5F /* Text_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42115BA20BC128300219A5F /* Text_VC.m */; };
 		B430F88920BFB03200561A06 /* 2018-05-31 11-00.txt in Resources */ = {isa = PBXBuildFile; fileRef = B430F88820BFB03200561A06 /* 2018-05-31 11-00.txt */; };
@@ -72,6 +73,8 @@
 		843EBA671FFB8040004F6DFA /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		843EBA681FFB8040004F6DFA /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		843EBA691FFB8040004F6DFA /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		B40396DD21016B09004D41DA /* JiaojiArr_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiaojiArr_VC.h; sourceTree = "<group>"; };
+		B40396DE21016B09004D41DA /* JiaojiArr_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JiaojiArr_VC.m; sourceTree = "<group>"; };
 		B42115B620BBCCA900219A5F /* ToolClassManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolClassManager.h; sourceTree = "<group>"; };
 		B42115B720BBCCA900219A5F /* ToolClassManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolClassManager.m; sourceTree = "<group>"; };
 		B42115B920BC128300219A5F /* Text_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text_VC.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				B42115B720BBCCA900219A5F /* ToolClassManager.m */,
 				843EBA631FFB6F36004F6DFA /* NumTab_cell.h */,
 				843EBA641FFB6F36004F6DFA /* NumTab_cell.m */,
+				B40396DD21016B09004D41DA /* JiaojiArr_VC.h */,
+				B40396DE21016B09004D41DA /* JiaojiArr_VC.m */,
 				843EBA3C1FFB6DFA004F6DFA /* Assets.xcassets */,
 				843EBA3E1FFB6DFA004F6DFA /* LaunchScreen.storyboard */,
 				843EBA411FFB6DFA004F6DFA /* Info.plist */,
@@ -388,6 +393,7 @@
 				B4F953DF20C2C647000C0B79 /* SCPieChartDataItem.m in Sources */,
 				B4F953D720C2C647000C0B79 /* SCBarChart.m in Sources */,
 				843EBA351FFB6DFA004F6DFA /* AppDelegate.m in Sources */,
+				B40396DF21016B09004D41DA /* JiaojiArr_VC.m in Sources */,
 				B42115B820BBCCA900219A5F /* ToolClassManager.m in Sources */,
 				B42115BB20BC128300219A5F /* Text_VC.m in Sources */,
 				B4F953DB20C2C647000C0B79 /* SCColor.m in Sources */,
